@@ -85,54 +85,7 @@ PINN-ODE-Solver/
 └── README.md                         # Comprehensive documentation
 ```
 
----
 
-## 🚀 Quick Start
-
-### 1. Installation
-
-Clone the repository and install the dependencies:
-
-```bash
-git clone https://github.com/huuan26/PINN-ODE-Solver.git
-cd PINN-ODE-Solver
-pip install -r requirements.txt
-```
-
-### 2. Running Individual Benchmarks
-
-Each script is completely self-contained and supports customizable CLI arguments:
-
-```bash
-# Solve Problem 1: First-Order Rational ODE
-python problem1_first_order.py --iterations 40000 --lr 0.001
-
-# Solve Problem 2: Oscillatory ODE
-python problem2_oscillatory.py --iterations 40000 --points 50
-
-# Solve Problem 3: Second-Order Differential Equation
-python problem3_second_order.py --iterations 40000 --lr 0.002
-
-# Solve Problem 4: Coupled Non-Linear ODE System
-python problem4_coupled_system.py --p1-epochs 20000 --p2-epochs 20000
-
-# Benchmark Forward Euler Numerical Method vs PINN
-python euler_vs_pinn.py --points 20
-```
-
-### 3. Running the Complete Benchmark Suite
-
-To run all benchmark problems in automated validation mode:
-
-```bash
-# Fast validation mode
-python benchmark_all.py --quick
-
-# Full precision convergence mode
-python benchmark_all.py
-```
-
----
 
 ## 📊 Benchmark Accuracy & Convergence Results
 

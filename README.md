@@ -2,7 +2,6 @@
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c.svg)](https://pytorch.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![Domain: Scientific Computing](https://img.shields.io/badge/Domain-Scientific%20ML%20%2F%20PINNs-blueviolet.svg)](#)
 
 A modular, high-precision scientific machine learning repository implementing **Physics-Informed Neural Networks (PINNs)** and **Deep Feed-Forward Neural Networks (FFNNs)** in **PyTorch** for solving linear, non-linear, oscillatory, higher-order, and coupled Ordinary Differential Equations (ODEs).
@@ -81,7 +80,6 @@ PINN-ODE-Solver/
 ├── pytorch_ode_solver_1hidden.py     # Backward-compatible entrypoint
 ├── pytorch_ode_solver_n_hidden.py    # Backward-compatible entrypoint
 ├── requirements.txt                  # Dependency specifications
-├── LICENSE                           # MIT Open Source License
 └── README.md                         # Comprehensive documentation
 ```
 
@@ -130,11 +128,6 @@ If you use this codebase or benchmark suite in your research, please cite the fo
 
 ---
 
-## 📄 License
+## 📜 Terms of Use
 
-This repository is distributed under the **MIT License**. See the [LICENSE](LICENSE) file for complete details.
-
-## 👤 Author
-
-**huuan26**
-- GitHub: [@huuan26](https://github.com/huuan26)
+This repository is made available for academic research and educational purposes. All rights reserved. Commercial redistribution or reproduction without explicit permission is prohibited.

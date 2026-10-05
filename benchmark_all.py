@@ -30,7 +30,7 @@ def run_benchmarks(quick_mode: bool = False) -> List[Dict[str, str]]:
 
     results = []
     print("=" * 75)
-    print("PINN-ODE-Solver: Comprehensive Benchmark Execution")
+    print("ANN-ODE-Solver: Comprehensive Benchmark Execution")
     print(f"Mode: {'Quick Validation' if quick_mode else 'Full Training Run'}")
     print("=" * 75)
 
@@ -135,8 +135,8 @@ def run_benchmarks(quick_mode: bool = False) -> List[Dict[str, str]]:
         "Time (s)": f"{dt4:.1f}",
     })
 
-    # 5. Euler vs PINN
-    print("\n[5/6] Running Euler vs PINN Comparison...")
+    # 5. Euler vs ANN
+    print("\n[5/6] Running Euler vs ANN Comparison...")
     t0 = time.time()
     xe_np = np.linspace(0, 1, 20).reshape(-1, 1)
     xe_tensor = torch.tensor(xe_np, dtype=torch.float32)
@@ -150,7 +150,7 @@ def run_benchmarks(quick_mode: bool = False) -> List[Dict[str, str]]:
     mete = euler_vs_pinn.compute_metrics(ye_pred, ye_exact)
     dt_e = time.time() - t0
     results.append({
-        "Benchmark": "Exponential Decay (PINN)",
+        "Benchmark": "Exponential Decay (ANN)",
         "Domain": "[0, 1]",
         "Max Abs Error": f"{mete['max_abs_error']:.2e}",
         "RMSE": f"{mete['root_mean_squared_error']:.2e}",
@@ -196,7 +196,7 @@ def run_benchmarks(quick_mode: bool = False) -> List[Dict[str, str]]:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run complete PINN ODE benchmark suite.")
+    parser = argparse.ArgumentParser(description="Run complete ANN ODE benchmark suite.")
     parser.add_argument(
         "--quick",
         action="store_true",

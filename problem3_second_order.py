@@ -102,7 +102,7 @@ def train_pinn(
     model = FeedForwardNN(hidden_dims=hidden_dims, activation="tanh")
     optimizer = torch.optim.Adam(model.parameters(), lr=learning_rate)
 
-    print(f"Starting PINN training for 2nd-order ODE on {len(x_train)} collocation points...")
+    print(f"Starting ANN training for 2nd-order ODE on {len(x_train)} collocation points...")
     print(f"Architecture: 1 -> {' -> '.join(map(str, hidden_dims))} -> 1 (Tanh)")
     print(f"Optimizer: Adam (lr={learning_rate})")
     print("-" * 55)
@@ -123,7 +123,7 @@ def train_pinn(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Solve Lagaris Problem 3 (Second-Order Damped ODE) using PINN."
+        description="Solve Lagaris Problem 3 (Second-Order Damped ODE) using ANN."
     )
     parser.add_argument("--iterations", type=int, default=40000, help="Training iterations")
     parser.add_argument("--lr", type=float, default=0.002, help="Learning rate")
@@ -157,7 +157,7 @@ def main():
     y_exact = exact_solution(x_np)
 
     metrics = compute_metrics(y_pred, y_exact)
-    print("\nQuantitative Evaluation Metrics (PINN vs Exact):")
+    print("\nQuantitative Evaluation Metrics (ANN vs Exact):")
     print(f"  Max Absolute Error (L_inf): {metrics['max_abs_error']:.4e}")
     print(f"  Mean Squared Error (MSE):    {metrics['mean_squared_error']:.4e}")
     print(f"  Root Mean Squared Error:     {metrics['root_mean_squared_error']:.4e}")

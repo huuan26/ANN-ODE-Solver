@@ -1,10 +1,10 @@
-# Physics-Informed Neural Networks for Solving ODEs (`PINN-ODE-Solver`)
+# Artificial Neural Networks for Solving ODEs (`ANN-ODE-Solver`)
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-ee4c2c.svg)](https://pytorch.org/)
-[![Domain: Scientific Computing](https://img.shields.io/badge/Domain-Scientific%20ML%20%2F%20PINNs-blueviolet.svg)](#)
+[![Domain: Scientific Computing](https://img.shields.io/badge/Domain-Scientific%20ML%20%2F%20ANN-blueviolet.svg)](#)
 
-A modular, high-precision scientific machine learning repository implementing **Physics-Informed Neural Networks (PINNs)** and **Deep Feed-Forward Neural Networks (FFNNs)** in **PyTorch** for solving linear, non-linear, oscillatory, higher-order, and coupled Ordinary Differential Equations (ODEs).
+A modular, high-precision scientific machine learning repository implementing **Artificial Neural Networks (ANNs)** and **Deep Feed-Forward Neural Networks (FFNNs)** in **PyTorch** for solving linear, non-linear, oscillatory, higher-order, and coupled Ordinary Differential Equations (ODEs).
 
 This repository is built upon the foundational mathematical framework introduced by **I. E. Lagaris, A. Likas, and D. I. Fotiadis (IEEE Transactions on Neural Networks, 1998)**.
 
@@ -14,7 +14,7 @@ This repository is built upon the foundational mathematical framework introduced
 
 ### 1. The Hard-Constrained Trial Solution Formulation
 
-Standard modern PINNs often enforce boundary and initial conditions as soft penalty terms in the objective function:
+While soft-constrained neural solvers often enforce boundary and initial conditions as penalty terms in the objective function:
 
 $$\mathcal{L}_{total} = \mathcal{L}_{residual} + \lambda_{bc} \mathcal{L}_{bc}$$
 
@@ -58,7 +58,7 @@ Derivatives $\frac{d\Psi_t}{dx}$ and $\frac{d^2\Psi_t}{dx^2}$ are computed using
 ## 📁 Repository Structure
 
 ```
-PINN-ODE-Solver/
+ANN-ODE-Solver/
 ├── figures/                          # Exported publication-quality figures (300 DPI)
 ├── src/                              # Modular package components
 │   ├── __init__.py                   # Package exports
@@ -68,7 +68,7 @@ PINN-ODE-Solver/
 ├── problem2_oscillatory.py           # Lagaris Problem 2 (Oscillatory ODE)
 ├── problem3_second_order.py          # Lagaris Problem 3 (2nd-Order Damped ODE)
 ├── problem4_coupled_system.py        # Lagaris Problem 4 (Coupled Non-Linear System)
-├── euler_vs_pinn.py                  # Forward Euler vs PINN comparison
+├── euler_vs_pinn.py                  # Forward Euler vs ANN comparison
 ├── ode_decay_single_layer.py         # Single-hidden-layer decay solver
 ├── ode_decay_deep.py                 # Multi-hidden-layer deep decay solver
 ├── benchmark_all.py                  # Automated benchmark execution suite
@@ -99,11 +99,11 @@ Results obtained on standard CPU runtime using the trial solution formulation:
 
 ---
 
-## 📈 Forward Euler vs PINN Analysis
+## 📈 Forward Euler vs ANN Analysis
 
 When comparing the continuous neural network solution against standard discrete Euler stepping on $x \in [0, 1]$ with $N=20$:
 - **Forward Euler ($O(\Delta x)$ error):** Accumulates step-by-step local truncation error, yielding maximum absolute error $\approx 3.4 \times 10^{-2}$.
-- **PINN ($C^\infty$ trial function):** Optimizes a globally continuous representation, achieving maximum absolute error $\approx 1.9 \times 10^{-4}$ (**over 100x lower error** on the same grid density).
+- **ANN ($C^\infty$ trial function):** Optimizes a globally continuous representation, achieving maximum absolute error $\approx 1.9 \times 10^{-4}$ (**over 100x lower error** on the same grid density).
 - Furthermore, the neural solution provides **instant closed-form evaluation and continuous derivatives** at any arbitrary point $x \in [0, 1]$ without interpolation.
 
 ---

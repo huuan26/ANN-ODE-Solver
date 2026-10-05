@@ -114,7 +114,7 @@ def train_pinn(
     model = FeedForwardNN(hidden_dims=hidden_dims, activation="tanh")
     optimizer = torch.optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9)
 
-    print(f"Starting PINN training on {len(x_train)} collocation points...")
+    print(f"Starting ANN training on {len(x_train)} collocation points...")
     print(f"Architecture: 1 -> {' -> '.join(map(str, hidden_dims))} -> 1 (Tanh)")
     print(f"Optimizer: Momentum SGD (lr={learning_rate}, momentum=0.9)")
     print("-" * 55)
@@ -138,7 +138,7 @@ def train_pinn(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Solve Lagaris Problem 1 using Physics-Informed Neural Network."
+        description="Solve Lagaris Problem 1 using Artificial Neural Network (ANN)."
     )
     parser.add_argument("--iterations", type=int, default=40000, help="Training iterations")
     parser.add_argument("--lr", type=float, default=0.001, help="Learning rate")
@@ -175,7 +175,7 @@ def main():
 
     # Quantitative error metrics
     metrics = compute_metrics(y_pred, y_exact)
-    print("\nQuantitative Evaluation Metrics (PINN vs Exact):")
+    print("\nQuantitative Evaluation Metrics (ANN vs Exact):")
     print(f"  Max Absolute Error (L_inf): {metrics['max_abs_error']:.4e}")
     print(f"  Mean Squared Error (MSE):    {metrics['mean_squared_error']:.4e}")
     print(f"  Root Mean Squared Error:     {metrics['root_mean_squared_error']:.4e}")

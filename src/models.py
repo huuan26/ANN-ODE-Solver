@@ -2,7 +2,7 @@
 Neural Network Architectures for Differential Equation Solvers.
 
 Provides multilayer perceptrons (MLP / FFNN) specifically designed for
-Physics-Informed Neural Networks (PINNs) and trial solution approximations.
+Artificial Neural Networks (ANNs) and trial solution approximations.
 """
 
 from typing import List, Union

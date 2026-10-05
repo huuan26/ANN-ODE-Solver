@@ -1,4 +1,4 @@
-# PINN-ODE-Solver Dependencies
+# ANN-ODE-Solver Dependencies
 torch>=2.0.0
 numpy>=1.20.0
 matplotlib>=3.5.0

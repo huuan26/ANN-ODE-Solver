@@ -1,5 +1,5 @@
 """
-Comparison: Classical Numerical Integration (Forward Euler) vs Neural Network (PINN).
+Comparison: Classical Numerical Integration (Forward Euler) vs Neural Network (ANN).
 
 Problem:
     Exponential Decay ODE:
@@ -13,7 +13,7 @@ Methods Evaluated:
     1. Forward Euler Method:
        Psi_{i+1} = Psi_i - dx * gamma * Psi_i
        Order of accuracy: O(dx)
-    2. Physics-Informed Neural Network:
+    2. Artificial Neural Network (ANN) Solver:
        Trial solution: Psi_t(x) = 1.0 + x * N(x, p)
        Trained via continuous autograd residual minimization.
     3. Analytical Ground Truth:
@@ -121,13 +121,13 @@ def train_pinn(
         scheduler.step()
 
     final_loss = compute_loss(model, x_train_p2, gamma=gamma, psi0=psi0)
-    print(f"PINN Training completed. Final residual cost: {final_loss.item():.4e}")
+    print(f"ANN Training completed. Final residual cost: {final_loss.item():.4e}")
     return model
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Benchmark Forward Euler vs Physics-Informed Neural Network."
+        description="Benchmark Forward Euler vs Artificial Neural Network (ANN) Solver."
     )
     parser.add_argument("--points", type=int, default=20, help="Collocation points")
     parser.add_argument("--gamma", type=float, default=2.0, help="Decay rate parameter")
@@ -170,7 +170,7 @@ def main():
 
     print("\nBenchmark Comparison Results:")
     print("----------------------------------------------------------------")
-    print(f"{'Metric':<25} | {'Forward Euler':<18} | {'PINN':<18}")
+    print(f"{'Metric':<25} | {'Forward Euler':<18} | {'ANN Solver':<18}")
     print("----------------------------------------------------------------")
     print(
         f"{'Max Absolute Error':<25} | {metrics_euler['max_abs_error']:<18.4e} | {metrics_pinn['max_abs_error']:<18.4e}"
@@ -215,11 +215,11 @@ def main():
         markersize=7,
         markerfacecolor="none",
         markeredgecolor="crimson",
-        label="Physics-Informed Neural Network",
+        label="Artificial Neural Network (ANN)",
     )
 
     plt.title(
-        "Exponential Decay ODE: Forward Euler vs PINN vs Analytical Solution",
+        "Exponential Decay ODE: Forward Euler vs ANN vs Analytical Solution",
         fontsize=13,
         fontweight="bold",
         pad=10,

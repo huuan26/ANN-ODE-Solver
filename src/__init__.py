@@ -1,5 +1,5 @@
 """
-PINN-ODE-Solver: Physics-Informed Neural Networks and Feed-Forward Neural Networks
+ANN-ODE-Solver: Artificial Neural Networks and Feed-Forward Neural Networks
 for solving Ordinary Differential Equations in PyTorch.
 
 Based on the foundational method by Lagaris, Likas, and Fotiadis (IEEE TNN 1998).

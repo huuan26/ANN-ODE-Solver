@@ -132,7 +132,7 @@ def train_pinn_system(
         optimizer, T_max=total_epochs, eta_min=1e-5
     )
 
-    print(f"Starting PINN curriculum training for Coupled ODE System...")
+    print(f"Starting ANN curriculum training for Coupled ODE System...")
     print(f"Architecture: 1 -> {' -> '.join(map(str, hidden_dims))} -> 2 (Tanh)")
     print(f"Phase 1: Domain [0, 1.5] ({epochs_phase1} epochs)")
     print(f"Phase 2: Domain [0, 3.0] ({epochs_phase2} epochs)")
@@ -171,7 +171,7 @@ def train_pinn_system(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Solve Lagaris Problem 4 (Coupled Non-Linear System) using PINN."
+        description="Solve Lagaris Problem 4 (Coupled Non-Linear System) using ANN."
     )
     parser.add_argument("--p1-epochs", type=int, default=20000, help="Phase 1 epochs")
     parser.add_argument("--p2-epochs", type=int, default=20000, help="Phase 2 epochs")

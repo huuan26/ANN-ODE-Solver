@@ -10,7 +10,7 @@ This repository is built upon the foundational mathematical framework introduced
 
 ---
 
-## 🔬 Mathematical & Theoretical Foundation
+## Mathematical & Theoretical Foundation
 
 ### 1. The Hard-Constrained Trial Solution Formulation
 
@@ -41,7 +41,7 @@ Derivatives $\frac{d\Psi_t}{dx}$ and $\frac{d^2\Psi_t}{dx^2}$ are computed using
 
 ---
 
-## 📌 Benchmark Problems Catalog
+## Benchmark Problems Catalog
 
 | File | Problem Type | Mathematical Equation | Domain & Conditions | Exact Solution |
 | :--- | :--- | :--- | :--- | :--- |
@@ -55,7 +55,7 @@ Derivatives $\frac{d\Psi_t}{dx}$ and $\frac{d^2\Psi_t}{dx^2}$ are computed using
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 
 ```
 ANN-ODE-Solver/
@@ -85,7 +85,7 @@ ANN-ODE-Solver/
 
 
 
-## 📊 Benchmark Accuracy & Convergence Results
+## Benchmark Accuracy & Convergence Results
 
 Results obtained on standard CPU runtime using the trial solution formulation:
 
@@ -99,7 +99,7 @@ Results obtained on standard CPU runtime using the trial solution formulation:
 
 ---
 
-## 📈 Forward Euler vs ANN Analysis
+## Forward Euler vs ANN Analysis
 
 When comparing the continuous neural network solution against standard discrete Euler stepping on $x \in [0, 1]$ with $N=20$:
 - **Forward Euler ($O(\Delta x)$ error):** Accumulates step-by-step local truncation error, yielding maximum absolute error $\approx 3.4 \times 10^{-2}$.
@@ -108,7 +108,7 @@ When comparing the continuous neural network solution against standard discrete 
 
 ---
 
-## 📚 Scientific References
+## Scientific References
 
 If you use this codebase or benchmark suite in your research, please cite the foundational paper:
 
@@ -128,6 +128,6 @@ If you use this codebase or benchmark suite in your research, please cite the fo
 
 ---
 
-## 📜 Terms of Use
+## Terms of Use
 
 This repository is made available for academic research and educational purposes. All rights reserved. Commercial redistribution or reproduction without explicit permission is prohibited.
